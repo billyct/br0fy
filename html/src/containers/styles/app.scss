@@ -1,0 +1,137 @@
+@import "reset";
+
+#app {
+  height: 100%;
+  width: 100%;
+}
+
+.app {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 20px;
+
+  &__header {
+    padding: 20px 0;
+    border-bottom: 2px dashed #ececec;
+  }
+
+  &__logo {
+    margin-left: -15px;
+    float: left;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    display: table-caption;
+    margin: 20px 0 0 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .app {
+    width: 100%;
+  }
+}
+
+
+.PageModel {
+  &__model {
+    &__list {
+
+    }
+
+    &__item {
+
+    }
+  }
+}
+
+
+//COMMON_STYLE_CLASS
+
+.common {
+  &--left {
+    float: left;
+  }
+
+  &--right {
+    float: right;
+  }
+
+  &--controls {
+    margin: 0 0 20px 0;
+  }
+
+  &--input {
+    width: 100%;
+    padding-left: 12px;
+    padding-right: 12px;
+    border: 1px solid #ddd;
+    outline: 0;
+    border-radius: 2px;
+    font-size: 14px;
+    height: 36px;
+
+    &:focus {
+      outline: 0;
+      border-color: #617fde;
+    }
+  }
+
+  &--button {
+
+    &--last {
+      margin-right: 0;
+    }
+
+
+    height: 36px;
+    font-size: 14px;
+    line-height: 36px;
+    text-align: center;
+    margin-right: 20px;
+    border-radius: 2px;
+    cursor: pointer;
+    padding: 0 30px;
+    text-transform: uppercase;
+    border: 1px solid #eee;
+    background-color: transparent;
+    display: inline-block;
+    color: #000000;
+
+    &:hover {
+      background-color: #eeeeee;
+    }
+
+
+    @mixin happy-button($color) {
+      border: none;
+      background-color: $color;
+      color: #fff;
+      &:hover {
+        background-color: darken($color, 10%);
+      }
+    }
+
+    &--primary {
+      @include happy-button(#56B1A7);
+    }
+
+    &--second{
+      @include happy-button(#E68C51);
+    }
+
+    &--radius {
+      border-radius: 500px;
+    }
+
+    &--icon {
+      padding: 0;
+      background-color: transparent;
+      width: 50px;
+      cursor: pointer;
+      box-shadow: 1px 1px 1px #ececec;
+    }
+
+  }
+}

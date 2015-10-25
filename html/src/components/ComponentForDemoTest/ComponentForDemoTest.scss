@@ -1,0 +1,22 @@
+.ComponentForDemoTest {
+  &__list {
+    padding: 0;
+    border: 1px dashed #ececec;
+  }
+
+  &__item {
+    list-style: none;
+    font-size: 20px;
+    line-height: 50px;
+    border-bottom: 1px dashed #ececec;
+    padding: 10px;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    button {
+      float: right;
+    }
+  }
+}

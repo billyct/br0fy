@@ -1,0 +1,210 @@
+.chatPage {
+
+  &__controls{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 10px 20px 0;
+    box-shadow: 1px -1px 5px #ececec;
+
+    div:last-child {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__chat {
+    height: 480px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-bottom: 70px;
+
+    &__list {
+      margin: 0;
+      padding: 0;
+    }
+
+    &__item {
+
+      list-style: none;
+      padding-bottom: 50px;
+
+      &__avatar {
+        width: 48px;
+        height: 48px;
+        clear: both;
+        img {
+          border-radius: 500px;
+        }
+
+        &.right {
+          float: right;
+
+        }
+      }
+
+      &__msg {
+        max-width: 70%;
+        width: auto;
+        clear: both;
+        p {
+          padding: 0;
+          overflow: scroll;
+        }
+        &.right {
+
+        }
+      }
+
+    }
+
+  }
+}
+
+.bubble {
+  display: inline-block;
+
+  position: relative;
+  padding: 5px 40px;
+  border-radius: 10px;
+  border: 3px solid black;
+  background: white;
+  clear: both;
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    height: 50px;
+    width: 90px;
+  }
+
+  &.left {
+    float: left;
+    margin: 20px 100px 20px 60px;
+    &:before {
+      border-radius: 0 0 100%;
+      box-shadow:
+      -2px -2px 0 0 #000 inset,
+      -23px 0 0 0 #fff inset,
+      -25px -2px 0 0 #000 inset;
+      left: 0;
+    }
+
+  }
+  &.right {
+    float: right;
+    margin: 10px 60px 20px 100px;
+    &:before {
+      border-radius: 0 0 0 100%;
+      box-shadow:
+      2px -2px 0 0 #000 inset,
+      23px 0 0 0 #fff inset,
+      25px -2px 0 0 #000 inset;
+      right: 0;
+    }
+  }
+
+  &.think {
+    &:before {
+      height: 3px;
+      width: 3px;
+      bottom: -20px;
+      border-radius: 100%;
+      background: #fff;
+    }
+    &.left:before {
+      left: 50px;
+      box-shadow:
+      0 0 0 7px white,
+      0 0 0 10px black,
+      -20px 15px 0 5px white,
+      -20px 15px 0 8px black,
+      -40px 20px 0 2px white,
+      -40px 20px 0 5px black;
+    }
+    &.right:before {
+      right: 50px;
+      box-shadow:
+      0 0 0 7px white,
+      0 0 0 10px black,
+      20px 15px 0 5px white,
+      20px 15px 0 8px black,
+      40px 20px 0 2px white,
+      40px 20px 0 5px black;
+    }
+  }
+  &.yell {
+    &:before {
+      height: 0px;
+      width: 0px;
+      bottom: -8px;
+      border-radius: 0;
+      background: #fff;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -41px;
+      height: 20px;
+      width: 59px;
+    }
+    &.left {
+      &:before {
+        transform: skew(-45deg);
+        left: 50px;
+        box-shadow:
+          //0 0 0 7px white,
+        0 -3px 0 5px white,
+        0 0 0 5px white,
+        0 8px 0 5px white,
+        8px 8px 0 5px white,
+        16px 8px 0 5px white,
+        24px 8px 0 5px white,
+
+        0 0 0 8px black,
+        0 8px 0 8px black,
+        8px 8px 0 8px black,
+        16px 8px 0 8px black,
+        24px 8px 0 8px black;
+      }
+      &:after {
+        border-radius: 0 0 60%;
+        transform: skew(-45deg);
+        box-shadow:
+        -3px -2px 0 0 #000 inset,
+        -14px 0 0 0 #fff inset,
+        -17px -2px 0 0 #000 inset;
+        left: 0;
+      }
+    }
+    &.right {
+      &:before {
+        transform: skew(45deg);
+        right: 50px;
+        box-shadow:
+        0 -3px 0 5px white,
+        0 0 0 5px white,
+        0 8px 0 5px white,
+        -8px 8px 0 5px white,
+        -16px 8px 0 5px white,
+        -24px 8px 0 5px white,
+        0 0 0 8px black,
+        0 8px 0 8px black,
+        -8px 8px 0 8px black,
+        -16px 8px 0 8px black,
+        -24px 8px 0 8px black;
+      }
+      &:after {
+        border-radius: 0 0 0 60%;
+        transform: skew(45deg);
+        box-shadow:
+        3px -2px 0 0 #000 inset,
+        14px 0 0 0 #fff inset,
+        17px -2px 0 0 #000 inset;
+        right: 0;
+      }
+    }
+  }
+}

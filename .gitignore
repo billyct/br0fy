@@ -1,0 +1,7 @@
+# Created by .ignore support plugin (hsz.mobi)
+
+html/dist
+html/node_modules
+
+php/vendor
+php/composer.lock
