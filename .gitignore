@@ -6,3 +6,5 @@ html/node_modules
 
 php/vendor
 php/composer.lock
+
+.idea
